@@ -22,13 +22,18 @@ module.exports = class LevelOrderTraversal extends BinaryTree {
   name = 'Level Order Traversal'
   cases = [
     { inp: this.createTree([3, 9, 20, null, null, 15, 7]), out: [[3], [9, 20], [15, 7]] },
+    { inp: this.createTree([]), out: [] },
+    { inp: this.createTree([1]), out: [[1]] },
+    { inp: this.createTree([3, 9, 20, 6, 9, 15, 7]), out: [[3], [9, 20], [6, 9, 15, 7]] },
   ]
 
   /*
     If there is no root node, return an empty list. Create a queue with the root node and the level 0.
     While the queue is not empty, take the first item. If the there are no nodes in the return level yet,
     create a new array with the node value in it. If it is not the first, simply push it to the list.
-    Add the left and the right nodes to the queue, with the increased level.  
+    Add the left and the right nodes to the queue, with the increased level.
+
+    Time: O(n), Space: O(n)
   */
   run(root) {
     if (!root) {
