@@ -26,7 +26,7 @@ return its level order traversal as:
 <details>
   <summary>High Level Solution</summary>
   
-    If there is no root node, return an empty list. Create a queue with the root node and the level 0. While the queue is not empty, take the first item. If the there are no nodes in the return level yet, create a new array with the node value in it. If it is not the first, simply push it to the list. Add the left and the right nodes to the queue, with the increased level. 
+  If there is no root node, return an empty list. Create a queue with the root node and the level 0. While the queue is not empty, take the first item. If the there are no nodes in the return level yet, create a new array with the node value in it. If it is not the first, simply push it to the list. Add the left and the right nodes to the queue, with the increased level. 
 
   Time complexity: O(n), Space complexity: O(1)
 </details>
