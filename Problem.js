@@ -1,3 +1,11 @@
+function print(st) {
+  process.stdout.write(st);
+}
+
+function printLn(st) {
+  console.log(st)
+}
+
 module.exports = class Problem {
   cases = []
   name = ''
@@ -18,12 +26,18 @@ module.exports = class Problem {
     this.cases.forEach((c) => {
       const r = this.test(c.inp, c.out);
       if (!r.res) {
-        console.log(`Test failed. Inp: ${c.inp}, Out: ${r.ret}, Expected: ${c.out}`)
+        print('Test failed.\n  Inp:    ')
+        printLn(c.inp)
+        print('  Out:\n    ')
+        printLn(r.ret)
+        print('  Expected:\n    ')
+        printLn(c.out)
       } else {
-        console.log(`Passed: Inp: ${c.inp}`)
+        print('Test passed\n  Inp:\n    ')
+        printLn(c.inp)
+        printLn('')
       }
     });
-    console.log('')
   }
 
   compare(res, out) {
